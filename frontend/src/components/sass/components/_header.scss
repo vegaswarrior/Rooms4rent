@@ -1,0 +1,53 @@
+.navbar1{
+    color: rgba(0, 0, 0, 0.973);   
+}
+.login_button {
+    position: absolute;
+    right: 200px;
+    top: 95px;
+    display: inline;
+    z-index: 1;
+}
+#sign_in{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+#sign_in:hover{
+    color: lightgoldenrodyellow;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+    .login_button {
+
+        right: 200px;
+        top: 45px;
+        display: inline;
+        z-index: 1;
+        
+    }
+}
+@media screen and (max-width: 600px) {
+    .login_button {
+        right: 120px;
+        top: 45px;
+        display: inline;
+        z-index: 1;
+    }
+}
+
+
+.login_div {
+display: flex;
+justify-self: center;
+align-items: center;
+display: block;
+    
+}
