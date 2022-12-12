@@ -1,4 +1,4 @@
-.btn {
+.button1 {
     &,
     &:link,
     &:visited {
@@ -19,7 +19,7 @@
     &:hover {
         transform: translateY(-3px);
         box-shadow: 0 1rem 2rem rgba($color-black,.2);
-
+        text-decoration: none;
         &::after {
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0;
@@ -70,7 +70,7 @@
     }
 }
 
-.btn-text {
+.button1-text {
     &:link,
     &:visited {
         font-size: $default-font-size;
@@ -87,6 +87,7 @@
         color: $color-white;
         box-shadow: 0 1rem 2rem rgba($color-black, .15);
         transform: translateY(-2px);
+        text-decoration: none;
     }
 
     &:active {

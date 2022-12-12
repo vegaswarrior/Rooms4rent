@@ -179,7 +179,7 @@ body {
     width: 100%;
     object-fit: cover; }
 
-.btn, .btn:link, .btn:visited {
+.button, .button:link, .button:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -191,31 +191,31 @@ body {
   border: none;
   cursor: pointer; }
 
-.btn:hover {
+.button:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
+  .button:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-.btn:active, .btn:focus {
+.button:active, .button:focus {
   outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-.btn--white {
+.button--white {
   background-color: #fff;
   color: #777; }
-  .btn--white::after {
+  .button--white::after {
     background-color: #fff; }
 
-.btn--green {
+.button--green {
   background-color: #55c57a;
   color: #fff; }
-  .btn--green::after {
+  .button--green::after {
     background-color: #55c57a; }
 
-.btn::after {
+.button::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -227,11 +227,11 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-.btn--animated {
+.button--animated {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards; }
 
-.btn-text:link, .btn-text:visited {
+.button-text:link, .button-text:visited {
   font-size: 1.6rem;
   color: #55c57a;
   display: inline-block;
@@ -240,22 +240,22 @@ body {
   padding: 3px;
   transition: all .2s; }
 
-.btn-text:hover {
+.button-text:hover {
   background-color: #55c57a;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px); }
 
-.btn-text:active {
+.button-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
 
-.card {
+.card1 {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
   height: 52rem; }
-  .card__side {
+  .card1__side {
     height: 52rem;
     transition: all .8s ease;
     position: absolute;
@@ -267,21 +267,21 @@ body {
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
-    .card__side--front {
+    .card1__side--front {
       background-color: #fff; }
-    .card__side--back {
+    .card1__side--back {
       transform: rotateY(180deg); }
-      .card__side--back-1 {
+      .card1__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
-      .card__side--back-2 {
+      .card1__side--back-2 {
         background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
-      .card__side--back-3 {
+      .card1__side--back-3 {
         background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
-  .card:hover .card__side--front {
+  .card1:hover .card1__side--front {
     transform: rotateY(-180deg); }
-  .card:hover .card__side--back {
+  .card1:hover .card1__side--back {
     transform: rotateY(0); }
-  .card__picture {
+  .card1__picture {
     background-size: cover;
     height: 23rem;
     background-blend-mode: screen;
@@ -289,13 +289,13 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
-    .card__picture--1 {
+    .card1__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
-    .card__picture--2 {
+    .card1__picture--2 {
       background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
-    .card__picture--3 {
+    .card1__picture--3 {
       background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
-  .card__heading {
+  .card1__heading {
     font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
@@ -305,72 +305,72 @@ body {
     top: 12rem;
     right: 2rem;
     width: 75%; }
-  .card__heading-span {
+  .card1__heading-span {
     padding: 1rem 1.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone; }
-    .card__heading-span--1 {
+    .card1__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
-    .card__heading-span--2 {
+    .card1__heading-span--2 {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
-    .card__heading-span--3 {
+    .card1__heading-span--3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
-  .card__details {
+  .card1__details {
     padding: 3rem; }
-    .card__details ul {
+    .card1__details ul {
       list-style: none;
       width: 80%;
       margin: 0 auto; }
-      .card__details ul li {
+      .card1__details ul li {
         text-align: center;
         font-size: 1.5rem;
         padding: 1rem; }
-        .card__details ul li:not(:last-child) {
+        .card1__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
-  .card__cta {
+  .card1__cta {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center; }
-  .card__price-box {
+  .card1__price-box {
     text-align: center;
     color: #fff;
     margin-bottom: 8rem; }
-  .card__price-only {
+  .card1__price-only {
     font-size: 1.4rem;
     text-transform: uppercase; }
-  .card__price-value {
+  .card1__price-value {
     font-size: 6rem;
     font-weight: 100; }
   @media only screen and (max-width: 56.25em), only screen and (hover: none) {
-    .card {
+    .card1 {
       height: auto;
       border-radius: 3px;
       background-color: #fff;
       box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
-      .card__side {
+      .card1__side {
         height: auto;
         position: relative;
         box-shadow: none; }
-        .card__side--back {
+        .card1__side--back {
           transform: rotateY(0);
           clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); }
-      .card:hover .card__side--front {
+      .card1:hover .card1__side--front {
         transform: rotateY(0); }
-      .card__details {
+      .card1__details {
         padding: 1rem 3rem; }
-      .card__cta {
+      .card1__cta {
         position: relative;
         top: 0%;
         left: 0;
         transform: translate(0);
         width: 100%;
         padding: 7rem 4rem 4rem 4rem; }
-      .card__price-box {
+      .card1__price-box {
         margin-bottom: 3rem; }
-      .card__price-value {
+      .card1__price-value {
         font-size: 4rem; } }
 
 .composition {

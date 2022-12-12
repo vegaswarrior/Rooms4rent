@@ -1,11 +1,13 @@
 import React from 'react'
 import '../components/sass/main.scss'
 import logo from '../components/img/WarriorLogo3.png'
-import { Nav, NavDropdown, Navbar, Container} from 'react-bootstrap'
+import { Nav, NavDropdown, Navbar, Container, Row, Col} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Avatar from "./Avatar";
 import { LinkContainer } from 'react-router-bootstrap'
 import { logout } from '../actions/userActions'
+import Black from '../components/img/black.png'
+import Syrup from '../components/img/syrupScreenShot.png'
 
 
 const Hero = () => {
@@ -34,7 +36,7 @@ const Hero = () => {
             <span className="heading-primary--sub">Where Websites Begin</span>
         </h1>
 
-		<a href="/contact" className="btn btn--white btn--animated">Contact Me</a>
+		  <a  className="button1 button1--white button1--animated" data-bs-toggle="modal" data-bs-target="#exampleModal">Latest Work</a>
 
     </div>
     
@@ -51,7 +53,7 @@ const Hero = () => {
                 <ul className="navigation__list">
                     <li className="navigation__item"><a href="/" className="navigation__link"><span>01</span>Home</a></li>
                     <li className="navigation__item"><a href="/about" className="navigation__link"><span>02</span>About</a></li>
-                    <li className="navigation__item"><a href="/pricing" className="navigation__link"><span>03</span>Pricing</a></li>
+                    <li className="navigation__item"><a href="/producthomescreen" className="navigation__link"><span>03</span>Products</a></li>
                     <li className="navigation__item"><a href="/blog" className="navigation__link"><span>04</span>Blog</a></li>
                     <li className="navigation__item"><a href="/contact" className="navigation__link"><span>05</span>Contact Me</a></li>
                     </ul>
@@ -104,6 +106,53 @@ const Hero = () => {
       </Navbar>
          
 </div>
+<Container>
+  <Row>
+
+  <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog modal-xl">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title text-center" id="exampleModalLabel">Modal title</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      <Col>      
+      <div className="card d-inline" style={{width: "18rem"}}>
+      <img src={Black} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">Card title</h5>
+        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="https://www.blackcatmacrame.com" className="btn btn-primary">Check Out Site</a>
+      </div>
+      </div>
+      </Col>
+      <Col></Col>
+      <Col>      
+      <div className="card d-inline" style={{width: "18rem"}}>
+      <img src={Syrup} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h1 className="card-title">Syrup-Topia</h1>
+        <p className="card-text">This is a E-Commerce Website for Flavored Maple Syrup that Uses the MERN Stack</p>
+        <a href="https://www.syruptopia.com" className="btn btn-primary">Check Out Site</a>
+      </div>
+      </div>
+      </Col>
+
+
+
+    </div>
+
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </Row>
+</Container>
+
+
 </>
   )
 }
