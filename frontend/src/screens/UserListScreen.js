@@ -6,6 +6,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import {listUsers, deleteUser} from "../actions/userActions";
 import Avatar from "../components/Avatar";
+import Header from "../components/Header";
 
 const UserListScreen = ({history}) => {
 	const dispatch = useDispatch();
@@ -35,6 +36,7 @@ const UserListScreen = ({history}) => {
 
 	return (
 		<>
+		<Header />
 			<h1>Users</h1>
 			{loading ? (
 				<Loader />

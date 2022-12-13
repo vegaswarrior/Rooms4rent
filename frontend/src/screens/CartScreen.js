@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
 import { addToCart, removeFromCart } from '../actions/cartActions'
+import Header from '../components/Header'
 
 
 const CartScreen = ({ match, location, history }) => {
@@ -31,6 +32,8 @@ const CartScreen = ({ match, location, history }) => {
   }
 
   return (
+    <>
+    <Header />
     <Row>
       <Col md={8}>
         <h1>Shopping Cart</h1>
@@ -109,6 +112,7 @@ const CartScreen = ({ match, location, history }) => {
         </Card>
       </Col>
     </Row>
+    </>
   )
 }
 

@@ -8,6 +8,7 @@ import Paginate from "../components/Paginate";
 import {listProducts, deleteProduct, createProduct} from "../actions/productActions";
 import {PRODUCT_CREATE_RESET} from "../constants/productConstants";
 import ProductCarousel from "../components/ProductCarousel";
+import Header from "../components/Header";
 
 const ProductListScreen = ({history, match}) => {
 	const pageNumber = match.params.pageNumber || 1;
@@ -70,6 +71,7 @@ const ProductListScreen = ({history, match}) => {
 	
 	return (
 		<>
+		<Header />
 			<Row className="align-items-center">
 				<Col>
 					<h1>Products</h1>

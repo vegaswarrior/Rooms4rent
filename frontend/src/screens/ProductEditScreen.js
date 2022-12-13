@@ -9,6 +9,7 @@ import FormContainer from "../components/FormContainer";
 import {listProductDetails, updateProduct} from "../actions/productActions";
 import {PRODUCT_UPDATE_RESET} from "../constants/productConstants";
 import EditProductImageGallery from "./EditProductImageGallery";
+import Header from "../components/Header";
 
 const ProductEditScreen = ({match, history}) => {
 	const productId = match.params.id;
@@ -94,6 +95,7 @@ const ProductEditScreen = ({match, history}) => {
 
 	return (
 		<>
+		<Header />
 			<Link to="/admin/productlist" className="btn btn-light my-3">
 				Go Back
 			</Link>

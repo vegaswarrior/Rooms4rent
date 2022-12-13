@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { savePaymentMethod } from '../actions/cartActions'
+import Header from '../components/Header'
 
 const PaymentScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart)
@@ -24,6 +25,8 @@ const PaymentScreen = ({ history }) => {
   }
 
   return (
+    <>
+    <Header />
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
       <h1>Payment Method</h1>
@@ -56,6 +59,7 @@ const PaymentScreen = ({ history }) => {
         </Button>
       </Form>
     </FormContainer>
+    </>
   )
 }
 
