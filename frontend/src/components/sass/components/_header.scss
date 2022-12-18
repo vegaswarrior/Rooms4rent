@@ -1,5 +1,10 @@
-.navbar1{
-    color: rgba(0, 0, 0, 0.973);   
+#navbar1{
+    background-color: transparent;
+    position: absolute;
+    right: 200px;
+    top: 95px;
+    display: inline;
+    z-index: 1;
 }
 .login_button {
     position: absolute;
@@ -24,19 +29,26 @@
 
 
 
-@media screen and (max-width: 800px) {
-    .login_button {
-
+@media screen and (max-width: 870px) {
+       #navbar1 {
         right: 200px;
-        top: 45px;
+        top: 41px;
         display: inline;
         z-index: 1;
         
     }
 }
 @media screen and (max-width: 600px) {
-    .login_button {
-        right: 120px;
+    #navbar1 {
+        right: 250px;
+        top: 45px;
+        display: inline;
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 500px) {
+    #navbar1 {
+        left: 250px;
         top: 45px;
         display: inline;
         z-index: 1;

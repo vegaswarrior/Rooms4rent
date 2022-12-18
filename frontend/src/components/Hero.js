@@ -61,18 +61,15 @@ const Hero = () => {
 		</div>
 
 </header>
-<div className='login_button'>
-<Navbar >
-        <Container>
 
+       <Navbar id='navbar1'>
+        <Container>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-  
             <Nav className='ml-auto'>
-
 			{userInfo ? (
-								<div className="d-lg-flex justify-content-start ms-lg-5">
-									<Avatar size="40px" url={userInfo.avatar} className="" />
+								<div className="d-flex justify-content-start ms-lg-5">
+									<Avatar size="30px" url={userInfo.avatar} className="" />
 									<NavDropdown title={userInfo.name} id="username">
 										<LinkContainer to="/profile">
 											<NavDropdown.Item>Profile</NavDropdown.Item>
@@ -103,9 +100,8 @@ const Hero = () => {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
-         
-</div>
+      </Navbar>      
+
 
 
   <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -141,9 +137,9 @@ const Hero = () => {
 
     </div>
 
-      {/* <div className="modal-footer">
+      <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div> */}
+      </div>
     </div>
   </div>
 </div>

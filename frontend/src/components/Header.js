@@ -38,11 +38,11 @@ const Header = () => {
 			<LinkContainer to="#about">
 				<Navbar.Brand className="jumboH2 text-info">About</Navbar.Brand>
 			</LinkContainer>
-			<LinkContainer to="/productshomepage">
+			<LinkContainer to="/producthomescreen">
 				<Navbar.Brand className="jumboH2 text-info">Products</Navbar.Brand>
 			</LinkContainer>
 			<LinkContainer to="/blog">
-				<Navbar.Brand className="jumboH2 text-info">About</Navbar.Brand>
+				<Navbar.Brand className="jumboH2 text-info">Blog</Navbar.Brand>
 			</LinkContainer>
 			<LinkContainer to="#contact">
 				<Navbar.Brand className="jumboH2 text-info">Contact Us</Navbar.Brand>

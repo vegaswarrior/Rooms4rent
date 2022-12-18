@@ -61,9 +61,9 @@ const ProfileScreen = ({location, history}) => {
 	return (
    <>
 		<Header />
-
+    <Container>
 		<Row>
-      <Col md={3}>
+      <Col md={3} className="bg-dark mt-5">
         <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {}
@@ -120,7 +120,7 @@ const ProfileScreen = ({location, history}) => {
           </Form>
         )}
       </Col>
-      <Col md={9}>
+      <Col md={9} className="mt-5">
         <h2>My Orders</h2>
         {loadingOrders ? (
           <Loader />
@@ -172,6 +172,7 @@ const ProfileScreen = ({location, history}) => {
         )}
       </Col>
     </Row>
+    </Container>
 
 		</>
 	);

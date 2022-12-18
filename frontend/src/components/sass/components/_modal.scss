@@ -3,7 +3,7 @@
 }
 .modal-content{
     background-color: transparent;
-  border: none;
+    border: none;
 }
 .modal-body{
     display: flex;
@@ -16,32 +16,16 @@
     flex-direction: column;
     justify-content: center;
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 700px) {
     .modal-body{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: transparent;
+        background-color: transparent;               
+        
     }
-    #cardCard1 {
-    width: 300px;
-    padding: 10px;
-    margin: 10px; 
-    border-radius: 10px;
-    border: 1px solid rgb(68, 208, 233);
-    box-shadow: 3px 3px 3px 3px rgb(67, 189, 219);
-    }
-    #cardCard2 {
-    width: 300px;
-    padding: 10px;
-    margin: 10px; 
-    border-radius: 10px;
-    border: 1px solid rgb(68, 208, 233);
-    box-shadow: 3px 3px 3px 3px rgb(67, 189, 219);
-    }
-
-}
-    
+}    
 
 #cardCard1 {
     width: 500px;

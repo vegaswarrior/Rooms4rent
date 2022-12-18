@@ -26,6 +26,7 @@ import ProductHomeScreen from "../src/screens/ProductHomeScreen";
 
 
 
+
 const App = () => {
 
 
@@ -33,7 +34,7 @@ const App = () => {
     <Router>
       {/* <Header /> */}
       <main className=''>
-        <Container>
+
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
@@ -53,7 +54,7 @@ const App = () => {
           <Route path='/admin/orderlist' component={OrderListScreen} />
           <Route path='/ecommerce' component={Ecommerce} />
           <Route path='/producthomescreen' component={ProductHomeScreen} />
-       </Container>
+   
        
           <Route path='/' component={HomeScreen} exact />
           <Route path='/search/:keyword' component={HomeScreen} exact />
