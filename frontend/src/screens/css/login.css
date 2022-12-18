@@ -10,6 +10,17 @@
     flex-direction: column;
     align-items: center;
 }
+@media screen and  (max-width: 700px){
+    .left_col{
+        display: none
+    }
+}
+@media screen and (max-width: 600px) {
+    .mobile_font_size{
+        font-size: 10px;
+    }
+}    
+
 .right_col{
     display: flex;
     flex-direction: column;
@@ -26,12 +37,6 @@
     margin-top: 5%;
     width: 300px
 }
-/* .input-group:hover{
-    margin-top: 5%;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px rgb(92, 92, 92);
-} */
 
 .user_card {
  height: 400px;

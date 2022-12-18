@@ -36,74 +36,71 @@ const LoginScreen2 = ({ location, history }) => {
   return (
     <>
     <Header />
-      <Container>
-        <Row>
-            <Col className='left_col'>
-               <h1 className='text-center'>Welcome Back, Friend</h1>
-                <img src={Dog} alt="" />
-            </Col>
-            <Col className='right_col'>
-                <h1 className='text-center'>Please, Sign In</h1>
-                {error && <Message variant='danger'>{error}</Message>}
-                 {loading && <Loader />}
-                    <div className="container h-100" onSubmit={submitHandler}>
-                    <div className="d-flex justify-content-center h-100">
-                    <div className="user_card">
-                        <div className="d-flex justify-content-center">
-                            <div className="brand_logo_container">
-                            <img src={Logo} className="brand_logo" alt="Logo" />
-                            </div>
+    <div className="container">
+        <div className="row">
+          <div className="col left_col">
+            <h1 className='text-center mb-5'>Welcome Back, Friend</h1>
+            <img src={Dog} alt="Dog Waving Hello" id="dog_img"/>
+          </div>
+          <div className="col right_col">
+            <h1 className='text-center mb-5'>Please Sign In</h1>
+               <div className="container h-100"  >
+                  <div className="d-flex justify-content-center h-100">
+                  <div className="user_card">
+                  <div className="d-flex justify-content-center">
+                  <div className="brand_logo_container">
+                    <img src={"https://webdevtrick.com/wp-content/uploads/logo-fb.png"} className="brand_logo" alt="Logo" />
+                  </div>
+                  </div>
+                  <div className="d-flex justify-content-center form_container">
+                      <form onSubmit={submitHandler}>
+                        <div className="input-group mb-3">
+                        <div className="input-group-append">
+                         <span className="input-group-text"><i className="fas fa-user mobile_font_size"></i></span>
                         </div>
-                            <div className="d-flex justify-content-center form_container">
-                                <form >
-                                <div className="input-group mb-3">
-                                <div className="input-group-append">
-                                <span className="input-group-text"><i className="fas fa-user"></i></span>
-                                </div>
-                                    <input type="text" className="form-control input_user" id="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                                </div>
-                                <div className="input-group mb-2">
-                                <div className="input-group-append">
-                                    <span className="input-group-text"><i className="fas fa-key"></i></span>
-                                </div>
-                                <input  className="form-control input_pass" id="password"  placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                                
-                                </div>
-                                <div className="form-group">
-                                <div className="custom-control custom-checkbox">
-                                    <input type="checkbox" className="custom-control-input" id="customControlInline" />
-                                    <label className="custom-control-label" for="customControlInline">Remember Password</label>
-                                </div>
-                                </div>
-                                </form>
-                            </div>
-                            <div className="d-flex justify-content-center mt-3 login_container">
-                            <button type="submit" className="btn login_btn">Login</button>
-                            </div>
-                            <div className="mt-4">
-                            
-                            <div className="d-flex justify-content-center links">
-                            Don't have an account? 
-                            <Link to="/register">
-                                 Sign Up
-                            </Link>
-                            
-                            </div>
-                            <div className="d-flex justify-content-center links">
-                            <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-                               Forgot Password
-                            </Link>
-                            </div>
-                            </div>
+                          <input className="form-control input_user mobile_font_size" type='email' placeholder='Enter email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                       </div>
+                       <div className="input-group mb-2">
+                         <div className="input-group-append">
+                          <span className="input-group-text"><i className="fas fa-key mobile_font_size"></i></span>
+                         </div>
+                         <input className="form-control input_pass mobile_font_size"  type='password' placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                         {/* <img src={visibilityIcon} alt='show password' className='showPassword' onClick={() => setShowPassword((prevState) => !prevState)} /> */}
+                       </div>
+                       <div className="form-group">
+                         <div className="custom-control custom-checkbox">
+                          <input type="checkbox" className="custom-control-input" id="customControlInline" />
+                          <label className="custom-control-label mobile_font_size" for="customControlInline">Remember Password</label>
+                         </div>
                         </div>
-                        </div>
-                    </div>
+                        <div className="d-flex justify-content-center mt-3 login_container">
+                          <button type="submit" className="btn login_btn mobile_font_size">Login</button>
+                       </div>
+                      </form>
+                  </div>
 
-
-            </Col>
-        </Row>
-      </Container>
-
+                  <div className="mt-4">
+                    
+                  <div className="d-flex justify-content-center links mobile_font_size">
+                     Don't have an account? 
+                     <Link to="/register">
+                        Sign Up
+                     </Link>
+                     
+                  </div>
+                  <div className="d-flex justify-content-center links mobile_font_size">
+                   <Link to="/forgotpassword">
+                      Forgot your password?
+                   </Link>
+                  
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+            </div>
+        </div>
+      </div>
 
   </>
   )
