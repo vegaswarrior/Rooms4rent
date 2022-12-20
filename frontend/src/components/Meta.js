@@ -12,9 +12,9 @@ const Meta = ({ title, description, keywords }) => {
 }
 
 Meta.defaultProps = {
-  title: 'Black Cat Macrame',
-  description: 'Hand Craftred Micro Macrame',
-  keywords: 'Macrame, Micro Macrame, Wall Art, Custom Hand Made',
+  title: 'Las Vegas Rooms For Rent',
+  description: 'Private Rooms For Rent In Las Vegas',
+  keywords: 'Shared House, Private Bath, Private Room, Master Bedroom, Free WIFI, Furnished, Unfurnished',
 }
 
 export default Meta

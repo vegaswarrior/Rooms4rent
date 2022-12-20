@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../components/img/WarriorLogo3.png'
+// import Logo from '../components/img/WarriorLogo3.png'
 
 
 const Footer = () => {
@@ -8,10 +8,10 @@ const Footer = () => {
 
     <footer className="footer">
     <div className="footer__logo-box">
-        <img src={Logo} alt="Full logo" className="footer__logo" />
+        {/* <img src={Logo} alt="Full logo" className="footer__logo" /> */}
     </div>
     <div className="row">
-        <div className="col-1-of-2">
+        {/* <div className="col-1-of-2">
             <div className="footer__navigation">
                 <ul className="footer__list">
                     <li className="footer__item"><a href="/" className="footer__link">Home</a></li>
@@ -21,7 +21,7 @@ const Footer = () => {
                     <li className="footer__item"><a href="#" className="footer__link">Terms</a></li>
                 </ul>
             </div>
-        </div>
+        </div> */}
         <div className='text-center py-3 copyRight'>Copyright &copy; Warrior Web Designs 2023</div>
     </div>
 </footer>

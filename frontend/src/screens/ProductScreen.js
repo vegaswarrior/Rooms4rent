@@ -9,7 +9,7 @@ import Meta from "../components/Meta";
 import {listProductDetails, createProductReview} from "../actions/productActions";
 import {PRODUCT_CREATE_REVIEW_RESET} from "../constants/productConstants";
 import ProductGallery from "../components/ProductGallery";
-import Header from "../components/Header";
+
 
 const ProductScreen = ({history, match}) => {
 	const [qty, setQty] = useState(1);
@@ -58,7 +58,7 @@ const ProductScreen = ({history, match}) => {
 
 	return (
 		<>
-			<Header />
+	
 			<Button className="btn btn-light my-3" onClick={() => history.goBack()}>
 				Go Back
 			</Button>

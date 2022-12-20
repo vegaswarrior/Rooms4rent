@@ -27,6 +27,10 @@ const productSchema = mongoose.Schema(
 			type: String,
 			required: true
 		},
+		address: {
+			type: String,
+			required: true
+		},
 		images: [String],
 		brand: {
 			type: String,
@@ -58,6 +62,11 @@ const productSchema = mongoose.Schema(
 			default: 0
 		},
 		countInStock: {
+			type: Number,
+			required: true,
+			default: 0
+		},
+		numRooms: {
 			type: Number,
 			required: true,
 			default: 0

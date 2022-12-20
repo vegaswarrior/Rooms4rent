@@ -1,7 +1,7 @@
 {
-  "name": "Black Cat Macrame",
+  "name": "Rooms For Rent",
   "version": "1.0.0",
-  "description": "Macrame MERN E-Commerce",
+  "description": "Shared Private Rooms For Rent In Las Vegas",
   "main": "server.js",
   "type": "module",
   "scripts": {

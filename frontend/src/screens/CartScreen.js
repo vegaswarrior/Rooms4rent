@@ -33,7 +33,6 @@ const CartScreen = ({ match, location, history }) => {
 
   return (
     <>
-    <Header />
     <Row>
       <Col md={8}>
         <h1>Shopping Cart</h1>

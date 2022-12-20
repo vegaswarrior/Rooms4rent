@@ -1,0 +1,18 @@
+.dashboard_col{
+    height: 800px;
+}
+.left_dash_col{
+    background-color: bisque;
+}
+.admin_panel_link{
+   
+    width: 100%;
+    border-bottom: 1px solid black;
+    box-shadow: 3px 3px 3px grey;
+}
+.admin_panel_link:hover{
+    background-color: rgb(224, 222, 222);
+    width: 100%;
+    border-bottom: 1px solid black;
+    box-shadow: 3px 3px 3px grey;
+}

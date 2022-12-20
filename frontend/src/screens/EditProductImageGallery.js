@@ -1,6 +1,6 @@
 import {Image} from "react-bootstrap";
 import React from "react";
-import ArrowIcon from "../components/svg/icons/ArrowIcon";
+// import ArrowIcon from "../components/svg/icons/ArrowIcon";
 import {Button} from "react-bootstrap";
 
 const btnStyle = {
@@ -51,9 +51,9 @@ export default function EditProductImageGallery({imageArr, setImages}) {
 								style={{width: "150px"}}
 							>
 								<button style={btnStyle} onClick={(e) => moveImageToLeft(e, i)}>
-									<ArrowIcon
+									{/* <ArrowIcon
 										style={{transform: "rotate(180deg)", transformOrigin: "center"}}
-									/>
+									/> */}
 								</button>
 
 								<Button
@@ -65,7 +65,7 @@ export default function EditProductImageGallery({imageArr, setImages}) {
 								</Button>
 
 								<button style={btnStyle} onClick={(e) => moveImageToRight(e, i)}>
-									<ArrowIcon />
+									{/* <ArrowIcon /> */}
 								</button>
 							</div>
 							<Image

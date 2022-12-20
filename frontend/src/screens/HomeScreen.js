@@ -1,10 +1,7 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {listProducts} from "../actions/productActions";
-import About from "../components/About";
-import Features from "../components/Features";
-import Hero from "../components/Hero";
-import Pricing from "../components/Pricing";
+
 
 const HomeScreen = ({match}) => {
 	const keyword = match.params.keyword;
@@ -22,12 +19,7 @@ const HomeScreen = ({match}) => {
 
 	return (
 		<>
-      <Hero />
-	  <About />
-	  <Features />
-	  <Pricing />
-
-
+           <h1>This is the Home Screen</h1>
 		</>
 	);
 };

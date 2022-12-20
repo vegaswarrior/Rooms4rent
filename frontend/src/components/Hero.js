@@ -1,7 +1,7 @@
 import React from 'react'
 import '../components/sass/main.scss'
 import logo from '../components/img/WarriorLogo3.png'
-import { Nav, NavDropdown, Navbar, Container, Row, Col} from 'react-bootstrap'
+import { Nav, NavDropdown, Navbar, Container} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Avatar from "./Avatar";
 import { LinkContainer } from 'react-router-bootstrap'
@@ -107,13 +107,9 @@ const Hero = () => {
   <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog modal-xl">
     <div className="modal-content">
-      {/* <div className="modal-header">
-        <h5 className="modal-title text-center" id="exampleModalLabel">Modal title</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
-      </div> */}
       <div className="modal-body">
-      
-      <div className="card " id='cardCard1'>
+
+      <div className="card modal_card" id='cardCard1'>
       <img src={Black} className="card-img-top" alt="..." />
       <div className="card-body">
         <h1 className="card-title text-center">Black Cat Macrame</h1>
@@ -123,7 +119,7 @@ const Hero = () => {
       </div>
 
      
-      <div className="card" id='cardCard2'>
+      <div className="card modal_card" id='cardCard2'>
       <img src={Syrup} className="card-img-top" alt="..." />
       <div className="card-body">
         <h1 className="card-title text-center">Syruptopia</h1>

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
-import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
@@ -20,21 +19,14 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
-import Ecommerce from "./components/Ecommerce";
-import ProductHomeScreen from "../src/screens/ProductHomeScreen";
-
-
-
-
+import Header from './components/Header'
+import DashBoardScreen from './screens/DashboardScreen'
 
 const App = () => {
-
-
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <main className=''>
-
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
@@ -44,6 +36,7 @@ const App = () => {
           <Route path='/reset' component={ResetPasswordScreen} />
           <Route path='/update_password/:id' component={NewPasswordScreen} />
           <Route path='/profile' component={ProfileScreen} />
+          <Route path='/admin/dashboard' component={DashBoardScreen} />
           <Route path='/product/:id' component={ProductScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
@@ -52,10 +45,6 @@ const App = () => {
           <Route path='/admin/productlist/:pageNumber' component={ProductListScreen} exact />
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
           <Route path='/admin/orderlist' component={OrderListScreen} />
-          <Route path='/ecommerce' component={Ecommerce} />
-          <Route path='/producthomescreen' component={ProductHomeScreen} />
-   
-       
           <Route path='/' component={HomeScreen} exact />
           <Route path='/search/:keyword' component={HomeScreen} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />

@@ -26,7 +26,6 @@ const OrderListScreen = ({ history }) => {
 
   return (
     <>
-    <Header />
       <h1>Orders</h1>
       {loading ? (
         <Loader />

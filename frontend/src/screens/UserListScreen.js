@@ -1,12 +1,11 @@
 import React, {useEffect} from "react";
 import {LinkContainer} from "react-router-bootstrap";
-import {Table, Button, Container} from "react-bootstrap";
+import {Table, Button, Container, Col, Nav, Navbar, Row} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import {listUsers, deleteUser} from "../actions/userActions";
 import Avatar from "../components/Avatar";
-import Header from "../components/Header";
 
 const UserListScreen = ({history}) => {
 	const dispatch = useDispatch();
@@ -36,8 +35,27 @@ const UserListScreen = ({history}) => {
 
 	return (
 		<>
-		<Header />
-		<Container>
+	<Container fluid>
+        <Row>
+            <Col md={2} className="dashboard_col left_dash_col">
+                <h1 className='text-center'>Admin Panel</h1>
+            <Nav className="me-auto" id="first_nav">
+            <LinkContainer to="/admin/productlist">
+              <Navbar.Brand className="admin_panel_link">Properties</Navbar.Brand>
+            </LinkContainer>
+            <LinkContainer  title={userInfo.name} to="/profile">
+              <Navbar.Brand className="admin_panel_link">Profile</Navbar.Brand>
+            </LinkContainer>
+            <LinkContainer  to="/admin/userlist">
+              <Navbar.Brand className="admin_panel_link">Tenants</Navbar.Brand>
+            </LinkContainer>
+            <LinkContainer  to="/admin/userlist">
+              <Navbar.Brand className="admin_panel_link">Quick Books</Navbar.Brand>
+            </LinkContainer>
+          </Nav>
+            </Col>
+            <Col md={10} className=" dashboard_col right_dash_col text-center">
+			<Container>
 			<h1>Users</h1>
 			{loading ? (
 				<Loader />
@@ -93,6 +111,10 @@ const UserListScreen = ({history}) => {
 				</Table>
 			)}
 			</Container>
+			</Col>
+        </Row>
+      </Container>
+		
 		</>
 	);
 };

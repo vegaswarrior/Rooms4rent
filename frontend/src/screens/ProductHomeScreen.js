@@ -25,9 +25,6 @@ const ProductHomeScreen = ({match}) => {
 
 	return (
 		<>
-     <Header />
-		
-     
 <Container>
       <h1 className="text-center">Our Latest Products</h1>
       {loading ? (

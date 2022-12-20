@@ -9,13 +9,14 @@ import FormContainer from "../components/FormContainer";
 import {listProductDetails, updateProduct} from "../actions/productActions";
 import {PRODUCT_UPDATE_RESET} from "../constants/productConstants";
 import EditProductImageGallery from "./EditProductImageGallery";
-import Header from "../components/Header";
 
 const ProductEditScreen = ({match, history}) => {
 	const productId = match.params.id;
 
 	const [name, setName] = useState("");
+	const [numRooms, setNumRooms] = useState(0);
 	const [price, setPrice] = useState(0);
+	const [address, setAddress] = useState("");
 	const [images, setImages] = useState([]);
 	const [brand, setBrand] = useState("");
 	const [category, setCategory] = useState("");
@@ -44,8 +45,10 @@ const ProductEditScreen = ({match, history}) => {
 				dispatch(listProductDetails(productId));
 			} else {
 				setName(product.name);
+				setNumRooms(product.numRooms);
 				setPrice(product.price);
 				setImages(product.images);
+				setAddress(product.address);
 				setBrand(product.brand);
 				setCategory(product.category);
 				setCountInStock(product.countInStock);
@@ -83,7 +86,9 @@ const ProductEditScreen = ({match, history}) => {
 			updateProduct({
 				_id: productId,
 				name,
+				address,
 				price,
+				numRooms,
 				images: images,
 				brand,
 				category,
@@ -95,7 +100,7 @@ const ProductEditScreen = ({match, history}) => {
 
 	return (
 		<>
-		<Header />
+
 			<Link to="/admin/productlist" className="btn btn-light my-3">
 				Go Back
 			</Link>
@@ -110,80 +115,41 @@ const ProductEditScreen = ({match, history}) => {
 				) : (
 					<Form onSubmit={submitHandler}>
 						<Form.Group controlId="name">
-							<Form.Label>Name</Form.Label>
-							<Form.Control
-								type="name"
-								placeholder="Enter name"
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-							></Form.Control>
+							<Form.Label>Propery Nick Name</Form.Label>
+							<Form.Control type="name" placeholder="Enter Property Nickname" value={name} onChange={(e) => setName(e.target.value)} ></Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId="price">
-							<Form.Label>Price</Form.Label>
-							<Form.Control
-								type="number"
-								placeholder="Enter price"
-								value={price}
-								onChange={(e) => setPrice(e.target.value)}
-							></Form.Control>
+							<Form.Label>Address</Form.Label>
+							<Form.Control type="text" placeholder="Enter Address" value={address} onChange={(e) => setAddress(e.target.value)} ></Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId="image">
 							<Form.Label>Image</Form.Label>
 							<EditProductImageGallery imageArr={images} setImages={setImages} />
-							<Form.File
-								id="image-file"
-								label="Add New Image"
-								custom
-								onChange={uploadFileHandler}
-							></Form.File>
+							<Form.File id="image-file" label="Add New Image"custom onChange={uploadFileHandler} ></Form.File>
 							{uploading && <Loader />}
 						</Form.Group>
 
 						<Form.Group controlId="brand">
-							<Form.Label>Brand</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter Brand Name"
-								value={brand}
-								onChange={(e) => setBrand(e.target.value)}
-								
-							></Form.Control>
-							
+							<Form.Label>Number Of Rooms</Form.Label>
+							<Form.Control type="number" placeholder="Enter Number Of Rooms" value={numRooms} onChange={(e) => setNumRooms(e.target.value)}></Form.Control>	
 						</Form.Group>
 
-						<Form.Group controlId="countInStock">
+						{/* <Form.Group controlId="countInStock">
 							<Form.Label>Count In Stock</Form.Label>
-							<Form.Control
-								type="number"
-								placeholder="Enter countInStock"
-								value={countInStock}
-								onChange={(e) => setCountInStock(e.target.value)}
-							></Form.Control>
+							<Form.Control type="number" placeholder="Enter countInStock" value={countInStock} onChange={(e) => setCountInStock(e.target.value)} ></Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId="category">
 							<Form.Label>Category</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter category"
-								value={category}
-								onChange={(e) => setCategory(e.target.value)}
-							></Form.Control>
+							<Form.Control type="text" placeholder="Enter category" value={category} onChange={(e) => setCategory(e.target.value)} ></Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId="description">
 							<Form.Label>Description</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter description"
-								value={description}
-								onChange={(e) => setDescription(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-
-                         
+							<Form.Control type="text" placeholder="Enter description" value={description} onChange={(e) => setDescription(e.target.value)} ></Form.Control>
+						</Form.Group> */}
 						<Button type="submit" variant="primary">
 							Update
 						</Button>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Table, Form, Button, Row, Col, Container} from "react-bootstrap";
+import {Table, Form, Button, Row, Col, Container, Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import Message from "../components/Message";
@@ -8,7 +8,6 @@ import {getUserDetails, updateUserProfile} from "../actions/userActions";
 import {listMyOrders} from "../actions/orderActions";
 import {USER_UPDATE_PROFILE_RESET} from "../constants/userConstants";
 import EditAvatar from "../components/EditAvatar";
-import Header from "../components/Header";
 
 
 const ProfileScreen = ({location, history}) => {
@@ -60,8 +59,30 @@ const ProfileScreen = ({location, history}) => {
 
 	return (
    <>
-		<Header />
-    <Container>
+      <Container fluid>
+        <Row>
+            <Col md={2} className="dashboard_col left_dash_col">
+                <h1 className='text-center'>Admin Panel</h1>
+            <Nav className="me-auto" id="first_nav">
+            <LinkContainer to="/admin/productlist">
+              <Navbar.Brand className="admin_panel_link">Properties</Navbar.Brand>
+            </LinkContainer>
+            <LinkContainer  title={userInfo.name} to="/profile">
+              <Navbar.Brand className="admin_panel_link">Profile</Navbar.Brand>
+            </LinkContainer>
+            <LinkContainer  to="/admin/userlist">
+              <Navbar.Brand className="admin_panel_link">Tenants</Navbar.Brand>
+            </LinkContainer>
+            <LinkContainer  to="/admin/userlist">
+              <Navbar.Brand className="admin_panel_link">Quick Books</Navbar.Brand>
+            </LinkContainer>
+            {/* <LinkContainer  title={userInfo.name} to="/profile">
+              <Navbar.Brand className="admin_panel_link">Profile</Navbar.Brand>
+            </LinkContainer> */}
+          </Nav>
+            </Col>
+            <Col md={10} className=" dashboard_col right_dash_col text-center">
+            <Container>
 		<Row>
       <Col md={3} className="bg-dark mt-5">
         <h2>User Profile</h2>
@@ -173,6 +194,10 @@ const ProfileScreen = ({location, history}) => {
       </Col>
     </Row>
     </Container>
+            </Col>
+        </Row>
+      </Container>
+   
 
 		</>
 	);

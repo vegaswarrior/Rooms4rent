@@ -1,13 +1,13 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Avatar from "./Avatar";
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
-import SearchBox from './SearchBox'
+// import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
-import '../components/sass/main.scss';
-import Logo from '../components/img/WarriorLogo3.png'
+
+
 
 
 
@@ -23,32 +23,24 @@ const Header = () => {
 
   return (
     <header>
-          <Navbar  variant='dark' expand='lg' className='navbar1 bg-dark'>
+    <Navbar  variant='dark' expand='lg' className='navbar1 bg-dark'>
         <Container className='navbar_container' fluid>
-           {/* <LinkContainer to="/">
-				<Navbar.Brand className="jumboH2 text-info"><img className="logo1" src={Logo} alt="blackcatlogo"></img></Navbar.Brand>
-			</LinkContainer> */}
+
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            {/* <Route render={({ history }) => <SearchBox history={history} />} /> */}
+
             <Nav className="me-auto" id="first_nav">
             <LinkContainer to="/">
 				<Navbar.Brand className="jumboH2 text-info ">Home</Navbar.Brand>
 			</LinkContainer>
-			<LinkContainer to="#about">
+			<LinkContainer to="/about">
 				<Navbar.Brand className="jumboH2 text-info">About</Navbar.Brand>
-			</LinkContainer>
-			<LinkContainer to="/producthomescreen">
-				<Navbar.Brand className="jumboH2 text-info">Products</Navbar.Brand>
-			</LinkContainer>
-			<LinkContainer to="/blog">
-				<Navbar.Brand className="jumboH2 text-info">Blog</Navbar.Brand>
 			</LinkContainer>
 			<LinkContainer to="#contact">
 				<Navbar.Brand className="jumboH2 text-info">Contact Us</Navbar.Brand>
 			</LinkContainer>
           </Nav>
-          <Nav className="ml-auto">
+          <Nav className="ml-auto" >
 							{userInfo ? (
 								<div className="d-lg-flex justify-content-start ms-lg-5">
 									<Avatar size="40px" url={userInfo.avatar} className="" />
@@ -61,30 +53,20 @@ const Header = () => {
 								</div>
 							) : (
 								<LinkContainer to="/login">
-									<Nav.Link>
-										<i className="fas fa-user"></i> Sign In
+									<Nav.Link >
+									  Sign In
 									</Nav.Link>
 								</LinkContainer>
 							)}
 							{userInfo && userInfo.isAdmin && (
-								<NavDropdown title="Admin" id="adminmenu">
-									<LinkContainer to="/admin/userlist">
-										<NavDropdown.Item>Users</NavDropdown.Item>
-									</LinkContainer>
-									<LinkContainer to="/admin/productlist">
-										<NavDropdown.Item>Products</NavDropdown.Item>
-									</LinkContainer>
-									<LinkContainer to="/admin/orderlist">
-										<NavDropdown.Item>Orders</NavDropdown.Item>
-									</LinkContainer>
-								</NavDropdown>
+           
+								<LinkContainer to="/admin/productlist">
+								   <Nav.Link >
+								     	Dashboard
+								   </Nav.Link>
+	                           </LinkContainer>
 								
 							)}
-							<LinkContainer to="/cart">
-								<Nav.Link>
-									<i className="fas fa-shopping-cart text-info" id="shopping_cart_icon"></i>
-								</Nav.Link>
-							</LinkContainer>
 						</Nav>
           </Navbar.Collapse>
         </Container>
