@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
@@ -17,7 +16,10 @@ import OrderScreen from './screens/OrderScreen'
 import UserListScreen from './screens/UserListScreen'
 import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
+import TenantListScreen from './screens/TenantListScreen'
+import TenantScreen from './screens/TenantScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
+import TenantEditScreen from './screens/TenantEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
 import Header from './components/Header'
 import DashBoardScreen from './screens/DashboardScreen'
@@ -27,7 +29,7 @@ const App = () => {
     <Router>
       <Header />
       <main className=''>
-          <Route path='/order/:id' component={OrderScreen} />
+
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
@@ -37,14 +39,24 @@ const App = () => {
           <Route path='/update_password/:id' component={NewPasswordScreen} />
           <Route path='/profile' component={ProfileScreen} />
           <Route path='/admin/dashboard' component={DashBoardScreen} />
-          <Route path='/product/:id' component={ProductScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
+
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+
+          <Route path='/product/:id' component={ProductScreen} />
           <Route path='/admin/productlist' component={ProductListScreen} exact />
           <Route path='/admin/productlist/:pageNumber' component={ProductListScreen} exact />
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
+
+          <Route path='/tenant/:id' component={TenantScreen} />
+          <Route path='/admin/tenant/:id/edit' component={TenantEditScreen} />
+          <Route path='/admin/tenantlist/:pageNumber' component={TenantListScreen} exact />
+          <Route path='/admin/tenantlist' component={TenantListScreen} exact />
+
+          <Route path='/order/:id' component={OrderScreen} />
           <Route path='/admin/orderlist' component={OrderListScreen} />
+
           <Route path='/' component={HomeScreen} exact />
           <Route path='/search/:keyword' component={HomeScreen} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />

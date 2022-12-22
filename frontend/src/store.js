@@ -11,6 +11,14 @@ import {
   productTopRatedReducer,  
   updateCategoryReducer,
 } from './reducers/productReducers'
+import {
+  tenantListReducer,
+  tenantDetailsReducer,
+  tenantDeleteReducer,
+  tenantCreateReducer,
+  tenantUpdateReducer,
+
+} from './reducers/tenantReducers'
 import { cartReducer } from './reducers/cartReducers'
 import {
   userLoginReducer,
@@ -38,8 +46,13 @@ const reducer = combineReducers({
   productDelete: productDeleteReducer,
   productCreate: productCreateReducer,
   productUpdate: productUpdateReducer,
-  productReviewCreate: productReviewCreateReducer,
-  productTopRated: productTopRatedReducer,
+
+  tenantList: tenantListReducer,
+  tenantDetails: tenantDetailsReducer,
+  tenantDelete: tenantDeleteReducer,
+  tenantCreate: tenantCreateReducer,
+  tenantUpdate: tenantUpdateReducer,
+
   cart: cartReducer,
   userLogin: userLoginReducer,
   userReset: userResetReducer,

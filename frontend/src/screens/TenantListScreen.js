@@ -5,48 +5,48 @@ import {useDispatch, useSelector} from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
-import {listProducts, deleteProduct, createProduct} from "../actions/productActions";
-import {PRODUCT_CREATE_RESET} from "../constants/productConstants";
-import ProductCarousel from "../components/ProductCarousel";
+import {listTenants, deleteTenant, createTenant} from "../actions/tenantActions";
+import {TENANT_CREATE_RESET} from "../constants/tenantConstants";
+// import ProductCarousel from "../components/ProductCarousel";
 
 
-const ProductListScreen = ({history, match}) => {
+const TenantListScreen = ({history, match}) => {
 	const pageNumber = match.params.pageNumber || 1;
 
 	const dispatch = useDispatch();
 
-	const productList = useSelector((state) => state.productList);
-	const {loading, error, products, page, pages} = productList;
+	const tenantList = useSelector((state) => state.tenantList);
+	const { loading, error, tenants, page, pages} = tenantList;
 
-	const productDelete = useSelector((state) => state.productDelete);
+	const tenantDelete = useSelector((state) => state.tenantDelete);
 	const {
 		loading: loadingDelete,
 		error: errorDelete,
 		success: successDelete
-	} = productDelete;
+	} = tenantDelete;
 
-	const productCreate = useSelector((state) => state.productCreate);
+	const tenantCreate = useSelector((state) => state.tenantCreate);
 	const {
 		loading: loadingCreate,
 		error: errorCreate,
 		success: successCreate,
-		product: createdProduct
-	} = productCreate;
+		tenant: createdTenant
+	} = tenantCreate;
 
 	const userLogin = useSelector((state) => state.userLogin);
 	const {userInfo} = userLogin;
 
 	useEffect(() => {
-		dispatch({type: PRODUCT_CREATE_RESET});
+		dispatch({type: TENANT_CREATE_RESET});
 
 		if (!userInfo || !userInfo.isAdmin) {
 			history.push("/login");
 		}
 
 		if (successCreate) {
-			history.push(`/admin/product/${createdProduct._id}/edit`);
+			history.push(`/admin/tenant/${createdTenant._id}/edit`);
 		} else {
-			dispatch(listProducts("", pageNumber));
+			dispatch(listTenants("", pageNumber));
 		}
 	}, [
 		dispatch,
@@ -54,18 +54,18 @@ const ProductListScreen = ({history, match}) => {
 		userInfo,
 		successDelete,
 		successCreate,
-		createdProduct,
+		createdTenant,
 		pageNumber
 	]);
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are you sure")) {
-			dispatch(deleteProduct(id));
+			dispatch(deleteTenant(id));
 		}
 	};
 
-	const createProductHandler = () => {
-		dispatch(createProduct());
+	const createTenantHandler = () => {
+		dispatch(createTenant());
 	};
 
 	
@@ -79,11 +79,11 @@ const ProductListScreen = ({history, match}) => {
 			<Container>
 			<Row className="align-items-center">
 				<Col>
-					<h1>Properties</h1>
+					<h1>Tenants</h1>
 				</Col>
 				<Col className="text-right">
-					<Button className="my-3" onClick={createProductHandler}>
-						<i className="fas fa-plus"></i> Create New Property
+					<Button className="my-3" onClick={createTenantHandler}>
+						<i className="fas fa-plus"></i> Create New Tenant
 					</Button>
 				</Col>
 			</Row>
@@ -100,32 +100,31 @@ const ProductListScreen = ({history, match}) => {
 					<Table striped bordered hover responsive className="table-sm">
 						<thead>
 							<tr>
-								<th>IMAGE</th>
 								<th>NAME</th>
-								<th>ADDRESS</th>
-								<th>ROOMS</th>
-								<th>BEDS</th>
-								<th></th>
+								<th>PROPERTY</th>
+								<th>ROOM</th>
+								<th>BED</th>
+								<th>PHONE</th>
+								<th>EMAIL</th>
 								
 							</tr>
 						</thead>
 						<tbody>
-							{products.map((product) => (
-								<tr key={product._id}>
+							{tenants.map((tenant) => (
+								<tr key={tenant._id}>
+									<td>{tenant.name}</td>
+									<td>{tenant.address}</td>
+									<td>{tenant.roomNum}</td>
+									<td>{tenant.bedNum}</td>
+									<td>{tenant.phone}</td>
+									<td>{tenant.email}</td>
 									<td>
-										<ProductCarousel imagesArr={product.images} alt={product.name} size={["200px", "200px"]} />
-									</td>
-									<td>{product.name}</td>
-									<td>{product.address}</td>
-									<td>{product.numRooms}</td>
-									<td>{product.numRooms}</td>
-									<td>
-										<LinkContainer to={`/admin/product/${product._id}/edit`}>
+										<LinkContainer to={`/admin/tenant/${tenant._id}/edit`}>
 											<Button variant="light" className="btn-sm">
 												<i className="fas fa-edit"></i>
 											</Button>
 										</LinkContainer>
-										<Button variant="danger" className="btn-sm" onClick={() => deleteHandler(product._id)} >
+										<Button variant="danger" className="btn-sm" onClick={() => deleteHandler(tenant._id)} >
 											<i className="fas fa-trash"></i>
 										</Button>
 									</td>
@@ -145,4 +144,4 @@ const ProductListScreen = ({history, match}) => {
 	);
 };
 
-export default ProductListScreen;
+export default TenantListScreen;

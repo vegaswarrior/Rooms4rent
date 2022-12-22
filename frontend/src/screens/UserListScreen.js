@@ -37,24 +37,8 @@ const UserListScreen = ({history}) => {
 		<>
 	<Container fluid>
         <Row>
-            <Col md={2} className="dashboard_col left_dash_col">
-                <h1 className='text-center'>Admin Panel</h1>
-            <Nav className="me-auto" id="first_nav">
-            <LinkContainer to="/admin/productlist">
-              <Navbar.Brand className="admin_panel_link">Properties</Navbar.Brand>
-            </LinkContainer>
-            <LinkContainer  title={userInfo.name} to="/profile">
-              <Navbar.Brand className="admin_panel_link">Profile</Navbar.Brand>
-            </LinkContainer>
-            <LinkContainer  to="/admin/userlist">
-              <Navbar.Brand className="admin_panel_link">Tenants</Navbar.Brand>
-            </LinkContainer>
-            <LinkContainer  to="/admin/userlist">
-              <Navbar.Brand className="admin_panel_link">Quick Books</Navbar.Brand>
-            </LinkContainer>
-          </Nav>
-            </Col>
-            <Col md={10} className=" dashboard_col right_dash_col text-center">
+
+            <Col md={12} className=" dashboard_col right_dash_col text-center">
 			<Container>
 			<h1>Users</h1>
 			{loading ? (

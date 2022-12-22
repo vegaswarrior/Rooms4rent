@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import {Form, Button, Se} from "react-bootstrap";
+import {Form, Button} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -15,9 +15,11 @@ const ProductEditScreen = ({match, history}) => {
 
 	const [name, setName] = useState("");
 	const [numRooms, setNumRooms] = useState(0);
+	const [numBeds, setNumBeds] = useState(0);
 	const [price, setPrice] = useState(0);
 	const [address, setAddress] = useState("");
 	const [images, setImages] = useState([]);
+	const [tenants, setTenants] = useState([]);
 	const [brand, setBrand] = useState("");
 	const [category, setCategory] = useState("");
 	const [countInStock, setCountInStock] = useState(0);
@@ -46,7 +48,9 @@ const ProductEditScreen = ({match, history}) => {
 			} else {
 				setName(product.name);
 				setNumRooms(product.numRooms);
+				setNumBeds(product.numBeds);
 				setPrice(product.price);
+				setTenants(product.tenants);
 				setImages(product.images);
 				setAddress(product.address);
 				setBrand(product.brand);
@@ -79,6 +83,9 @@ const ProductEditScreen = ({match, history}) => {
 			setUploading(false);
 		}
 	};
+	function handleChange(value) {
+		setTenants([...tenants, { name: value }]);
+	  }
 
 	const submitHandler = (e) => {
 		e.preventDefault();
@@ -89,6 +96,8 @@ const ProductEditScreen = ({match, history}) => {
 				address,
 				price,
 				numRooms,
+				numBeds,
+				tenants,
 				images: images,
 				brand,
 				category,
@@ -131,25 +140,17 @@ const ProductEditScreen = ({match, history}) => {
 							{uploading && <Loader />}
 						</Form.Group>
 
-						<Form.Group controlId="brand">
+
+						<Form.Group controlId="numRooms">
 							<Form.Label>Number Of Rooms</Form.Label>
 							<Form.Control type="number" placeholder="Enter Number Of Rooms" value={numRooms} onChange={(e) => setNumRooms(e.target.value)}></Form.Control>	
 						</Form.Group>
-
-						{/* <Form.Group controlId="countInStock">
-							<Form.Label>Count In Stock</Form.Label>
-							<Form.Control type="number" placeholder="Enter countInStock" value={countInStock} onChange={(e) => setCountInStock(e.target.value)} ></Form.Control>
+						<Form.Group controlId="numBeds">
+							<Form.Label>Number Of Beds</Form.Label>
+							<Form.Control type="number" placeholder="Enter Number Of Rooms" value={numBeds} onChange={(e) => setNumBeds(e.target.value)}></Form.Control>	
 						</Form.Group>
 
-						<Form.Group controlId="category">
-							<Form.Label>Category</Form.Label>
-							<Form.Control type="text" placeholder="Enter category" value={category} onChange={(e) => setCategory(e.target.value)} ></Form.Control>
-						</Form.Group>
 
-						<Form.Group controlId="description">
-							<Form.Label>Description</Form.Label>
-							<Form.Control type="text" placeholder="Enter description" value={description} onChange={(e) => setDescription(e.target.value)} ></Form.Control>
-						</Form.Group> */}
 						<Button type="submit" variant="primary">
 							Update
 						</Button>

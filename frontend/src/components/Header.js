@@ -20,7 +20,8 @@ const Header = () => {
   const logoutHandler = () => {
     dispatch(logout())
   }
-
+  const productList = useSelector((state) => state.productList);
+  const {loading, error, products, page, pages} = productList;
   return (
     <header>
     <Navbar  variant='dark' expand='lg' className='navbar1 bg-dark'>
@@ -36,7 +37,7 @@ const Header = () => {
 			<LinkContainer to="/about">
 				<Navbar.Brand className="jumboH2 text-info">About</Navbar.Brand>
 			</LinkContainer>
-			<LinkContainer to="#contact">
+			<LinkContainer to="/contact">
 				<Navbar.Brand className="jumboH2 text-info">Contact Us</Navbar.Brand>
 			</LinkContainer>
           </Nav>
@@ -58,15 +59,20 @@ const Header = () => {
 									</Nav.Link>
 								</LinkContainer>
 							)}
-							{userInfo && userInfo.isAdmin && (
-           
-								<LinkContainer to="/admin/productlist">
-								   <Nav.Link >
-								     	Dashboard
-								   </Nav.Link>
-	                           </LinkContainer>
-								
+			              {userInfo && userInfo.isAdmin && (
+								<NavDropdown title='Admin' id='adminmenu'>
+								<LinkContainer to='/admin/userlist'>
+									<NavDropdown.Item>Users</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/productlist'>
+									<NavDropdown.Item>Properties</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/tenantlist'>
+									<NavDropdown.Item>Tenants</NavDropdown.Item>
+								</LinkContainer>
+								</NavDropdown>
 							)}
+						
 						</Nav>
           </Navbar.Collapse>
         </Container>

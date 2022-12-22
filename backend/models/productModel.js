@@ -23,6 +23,11 @@ const productSchema = mongoose.Schema(
 			required: true,
 			ref: "User"
 		},
+		tenant: {
+			type: mongoose.Schema.Types.ObjectId,
+			required: true,
+			ref: "Tenant"
+		},
 		name: {
 			type: String,
 			required: true
@@ -40,7 +45,6 @@ const productSchema = mongoose.Schema(
 			type: String,
 			required: true
 		},
-		// category: [categories],
 		description: {
 			type: String,
 			required: true
@@ -67,6 +71,11 @@ const productSchema = mongoose.Schema(
 			default: 0
 		},
 		numRooms: {
+			type: Number,
+			required: true,
+			default: 0
+		},
+		numBeds: {
 			type: Number,
 			required: true,
 			default: 0

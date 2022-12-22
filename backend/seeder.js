@@ -1,14 +1,13 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
-import users from './data/users.js'
+
 import products from './data/products.js'
-import User from './models/userModel.js'
-import Product from './models/productModel.js'
-import Category from "./models/categoryModel.js"
-import Order from './models/orderModel.js'
-import categories from './data/categories.js'
+import Tenants from './data/tenants.js'
+
 import connectDB from './config/db.js'
+import Tenant from './models/tenantModel.js'
+
 
 dotenv.config()
 
@@ -16,21 +15,18 @@ connectDB()
 
 const importData = async () => {
   try {
-    await Order.deleteMany()
-    await Product.deleteMany()
-    await User.deleteMany()
-    await Category.deleteMany()
 
-    const createdUsers = await User.insertMany(users)
-    const createdCategory = await Category.insertMany(categories);
+    await Tenants.deleteMany()
+
+    const createdTenants = await Tenant.insertMany(tenants)
 
     const adminUser = createdUsers[0]._id
 
-    const sampleProducts = products.map((product) => {
-      return { ...product, user: adminUser }
+    const sampleTenants = products.map((tenants) => {
+      return { ...tenants, user: adminUser }
     })
 
-    await Product.insertMany(sampleProducts)
+    await Tenant.insertMany(sampleTenants)
 
     console.log('Data Imported!'.green.inverse)
     process.exit()
@@ -42,10 +38,8 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
-    await Order.deleteMany()
-    await Product.deleteMany()
-    await User.deleteMany()
-    await Category.deleteMany()
+    await Tenant.deleteMany()
+
 
     console.log('Data Destroyed!'.red.inverse)
     process.exit()
