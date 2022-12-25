@@ -23,11 +23,6 @@ const productSchema = mongoose.Schema(
 			required: true,
 			ref: "User"
 		},
-		tenant: {
-			type: mongoose.Schema.Types.ObjectId,
-			required: true,
-			ref: "Tenant"
-		},
 		name: {
 			type: String,
 			required: true

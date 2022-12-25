@@ -19,7 +19,6 @@ const ProductEditScreen = ({match, history}) => {
 	const [price, setPrice] = useState(0);
 	const [address, setAddress] = useState("");
 	const [images, setImages] = useState([]);
-	const [tenants, setTenants] = useState([]);
 	const [brand, setBrand] = useState("");
 	const [category, setCategory] = useState("");
 	const [countInStock, setCountInStock] = useState(0);
@@ -50,7 +49,6 @@ const ProductEditScreen = ({match, history}) => {
 				setNumRooms(product.numRooms);
 				setNumBeds(product.numBeds);
 				setPrice(product.price);
-				setTenants(product.tenants);
 				setImages(product.images);
 				setAddress(product.address);
 				setBrand(product.brand);
@@ -83,9 +81,7 @@ const ProductEditScreen = ({match, history}) => {
 			setUploading(false);
 		}
 	};
-	function handleChange(value) {
-		setTenants([...tenants, { name: value }]);
-	  }
+
 
 	const submitHandler = (e) => {
 		e.preventDefault();
@@ -97,7 +93,6 @@ const ProductEditScreen = ({match, history}) => {
 				price,
 				numRooms,
 				numBeds,
-				tenants,
 				images: images,
 				brand,
 				category,

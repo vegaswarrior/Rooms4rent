@@ -22,7 +22,7 @@ const Footer = () => {
                 </ul>
             </div>
         </div> */}
-        <div className='text-center py-3 copyRight'>Copyright &copy; Warrior Web Designs 2023</div>
+        <div className='text-center py-3 copyRight'>Copyright &copy; AAA Real Estate LLC 2023</div>
     </div>
 </footer>
 

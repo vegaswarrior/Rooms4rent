@@ -24,11 +24,49 @@ import OrderListScreen from './screens/OrderListScreen'
 import Header from './components/Header'
 import DashBoardScreen from './screens/DashboardScreen'
 
+
+import SnowFlower from './components/properties/SnowFlower'
+import Tropicana from './components/properties/Tropicana'
+import SirGeorge from './components/properties/SirGeorge'
+import SirDavid from './components/properties/SirDavid'
+import SantaAnita from './components/properties/SantaAnita'
+import Sandmist from './components/properties/Sandmist'
+import LivingDesert from './components/properties/LivingDesert'
+import Lamont from './components/properties/Lamont'
+import Hialeah from './components/properties/Hialeah'
+
+import Flower from './components/properties/FlowerHome'
+import Melissa from './components/properties/Melissa'
+import Hassett from './components/properties/Hassett'
+import Palms from './components/properties/PalmsHouse'
+
+
+
 const App = () => {
   return (
     <Router>
       <Header />
       <main className=''>
+       
+
+          <Route path='/admin/SnowFlower/:pageNumber' component={SnowFlower} />
+          <Route path='/admin/Tropicana/:pageNumber' component={Tropicana} />
+          <Route path='/admin/SirGeorge/:pageNumber' component={SirGeorge} />
+          <Route path='/admin/SirDavid/:pageNumber' component={SirDavid} />
+          <Route path='/admin/SantaAnita/:pageNumber' component={SantaAnita} />
+          <Route path='/admin/Sandmist/:pageNumber' component={Sandmist} />
+          <Route path='/admin/LivingDesert/:pageNumber' component={LivingDesert} />
+          <Route path='/admin/Lamont/:pageNumber' component={Lamont} />
+          <Route path='/admin/Hialeah' component={Hialeah} />
+
+          <Route path='/admin/FlowerHome' component={Flower} />
+          <Route path='/admin/Melissa' component={Melissa} />
+          <Route path='/admin/Hassett' component={Hassett} />
+          <Route path='/admin/PalmsHouse' component={Palms} />
+
+
+
+
 
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />

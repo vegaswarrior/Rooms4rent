@@ -105,7 +105,7 @@ const TenantListScreen = ({history, match}) => {
 								<th>ROOM</th>
 								<th>BED</th>
 								<th>PHONE</th>
-								<th>EMAIL</th>
+
 								
 							</tr>
 						</thead>
@@ -117,7 +117,6 @@ const TenantListScreen = ({history, match}) => {
 									<td>{tenant.roomNum}</td>
 									<td>{tenant.bedNum}</td>
 									<td>{tenant.phone}</td>
-									<td>{tenant.email}</td>
 									<td>
 										<LinkContainer to={`/admin/tenant/${tenant._id}/edit`}>
 											<Button variant="light" className="btn-sm">

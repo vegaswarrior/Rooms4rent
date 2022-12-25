@@ -19,11 +19,9 @@ const TenantEditScreen = ({match, history}) => {
 	const [rent, setRent] = useState(0);
 	const [address, setAddress] = useState("");
 	const [phone, setPhone] = useState(0);
-	const [email, setEmail] = useState("");
-
-   
-
-	const [uploading, setUploading] = useState(false);
+	const [notes, setNotes] = useState("");
+	const [email_1, setEmail_1] = useState("");
+	// const [property, setProperty] = useState("");
 
 	const dispatch = useDispatch();
 
@@ -51,33 +49,13 @@ const TenantEditScreen = ({match, history}) => {
 				setRent(tenant.rent);
 				setAddress(tenant.address);
 				setPhone(tenant.phone);
-				setEmail(tenant.email);
+				setNotes(tenant.notes);
+				setEmail_1(tenant.email_1);
+				// setProperty(tenant.property);
+
 			}
 		}
 	}, [dispatch, history, tenantId, tenant, successUpdate]);
-
-	// const uploadFileHandler = async (e) => {
-	// 	const file = e.target.files[0];
-	// 	const formData = new FormData();
-	// 	formData.append("lease", file);
-	// 	setUploading(true);
-
-	// 	try {
-	// 		const config = {
-	// 			headers: {
-	// 				"Content-Type": "multipart/form-data"
-	// 			}
-	// 		};
-
-	// 		const {data} = await axios.post("/api/upload", formData, config);
-
-	// 		setImages((prev) => [...prev, data]);
-	// 		setUploading(false);
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 		setUploading(false);
-	// 	}
-	// };
 
 
 	const submitHandler = (e) => {
@@ -91,14 +69,14 @@ const TenantEditScreen = ({match, history}) => {
 				roomNum,
 				bedNum,
                 phone,
-                email
+				notes,
+				email_1,
 			})
 		);
 	};
 
 	return (
 		<>
-
 			<Link to="/admin/tenantlist" className="btn btn-light my-3">
 				Go Back
 			</Link>
@@ -121,15 +99,6 @@ const TenantEditScreen = ({match, history}) => {
 							<Form.Label>Address</Form.Label>
 							<Form.Control type="text" placeholder="Enter Address" value={address} onChange={(e) => setAddress(e.target.value)} ></Form.Control>
 						</Form.Group>
-
-						{/* <Form.Group controlId="image">
-							<Form.Label>Image</Form.Label>
-							<EditProductImageGallery imageArr={images} setImages={setImages} />
-							<Form.File id="image-file" label="Add New Image"custom onChange={uploadFileHandler} ></Form.File>
-							{uploading && <Loader />}
-						</Form.Group> */}
-
-
 						<Form.Group controlId="roomNum">
 							<Form.Label>Room Number</Form.Label>
 							<Form.Control type="number" placeholder="Room Number" value={roomNum} onChange={(e) => setRoomNum(e.target.value)}></Form.Control>	
@@ -137,10 +106,6 @@ const TenantEditScreen = ({match, history}) => {
 						<Form.Group controlId="bedNum">
 							<Form.Label>Bed Number</Form.Label>
 							<Form.Control type="number" placeholder="Bed Number" value={bedNum} onChange={(e) => setBedNum(e.target.value)}></Form.Control>	
-						</Form.Group>
-						<Form.Group controlId="email">
-							<Form.Label>Email</Form.Label>
-							<Form.Control type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>	
 						</Form.Group>
 						<Form.Group controlId="phone">
 							<Form.Label>Phone Number</Form.Label>
@@ -150,8 +115,21 @@ const TenantEditScreen = ({match, history}) => {
 							<Form.Label>Montly Rent</Form.Label>
 							<Form.Control type="number" placeholder="Monthly Rent" value={rent} onChange={(e) => setRent(e.target.value)}></Form.Control>	
 						</Form.Group>
+						<Form.Group controlId="email_1">
+							<Form.Label>Montly Rent</Form.Label>
+							<Form.Control type="email" placeholder="Email" value={email_1} onChange={(e) => setEmail_1(e.target.value)}></Form.Control>	
+						</Form.Group>
+						<Form.Group controlId="notes">
+							<Form.Label>Notes</Form.Label>
+							<Form.Control type="text" placeholder="Notes" value={notes} onChange={(e) => setNotes(e.target.value)}></Form.Control>	
+						</Form.Group>
+						{/* <Form.Group controlId="property">
+							<Form.Label>Property</Form.Label>
+							<Form.Control type="text" placeholder="Property" value={property} onChange={(e) => setProperty(e.target.value)}></Form.Control>	
+						</Form.Group> */}
+				
 
-
+                         
 						<Button type="submit" variant="primary">
 							Update
 						</Button>

@@ -1,0 +1,7 @@
+.hero_container{
+    background-image: url(../images/AdobeStock_310482134_Preview.jpeg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}

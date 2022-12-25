@@ -19,8 +19,8 @@ const getTenants = asyncHandler(async (req, res) => {
 	} else {
 		condition = { ...keyword };
 	}
-    const count = await Tenant.countDocuments({ ...keyword })
-    const tenants = await Tenant.find({ ...keyword })
+    const count = await Tenant.countDocuments(condition)
+    const tenants = await Tenant.find(condition)
       .limit(pageSize)
       .skip(pageSize * (page - 1))
   
@@ -62,11 +62,10 @@ const deleteTenant = asyncHandler(async (req, res) => {
 const createTenant = asyncHandler(async (req, res) => {
 	const tenant = new Tenant({
 		name: "Sample name",
+		email_1: "Enter Email",
 		rent: 0,
-    phone: 0,
-    email: "sample email",
-    address: "Sample Email",
-		// product: req.product._id,
+        phone: 0,
+        address: "Please Enter AN Address",
 		roomNum: 0,
 		bedNnum: 0,
 		notes: "Sample Notes"
@@ -77,20 +76,20 @@ const createTenant = asyncHandler(async (req, res) => {
 });
 
 const updateTenant = asyncHandler(async (req, res) => {
-	const {name, rent, notes, email, phone, roomNum, bedNum, address } = req.body;
+	const {name, rent, notes, phone, roomNum, bedNum, address, email_1} = req.body;
 
 	const tenant = await Tenant.findById(req.params.id);
 
 	if (tenant) {
 		tenant.name = name;
+		tenant.email_1 = email_1;
 		tenant.address = address;
 		tenant.phone = phone;
-		tenant.email = email;
 		tenant.roomNum = roomNum;
 		tenant.bedNum = bedNum;
 		tenant.rent = rent;
-		tenant.address = address;
 		tenant.notes = notes;
+        
 
 		const updatedTenant = await tenant.save();
 		res.json(updatedTenant);

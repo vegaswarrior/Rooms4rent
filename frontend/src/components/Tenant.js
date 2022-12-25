@@ -20,8 +20,8 @@ const Tenant = ({Tenant}) => {
 				<Card.Text as='h3'>Room:{tenant.roomNum}</Card.Text>
 				<Card.Text as='h3'>Bed:{tenant.bedNum}</Card.Text>
 				<Card.Text as='h3'>Phone:{tenant.phone}</Card.Text>
-				<Card.Text as='h3'>Beds:{tenant.email}</Card.Text>
-				<Card.Text as='h3'>Email:{tenant.bedNum}</Card.Text>
+				{/* <Card.Text as='h3'>Beds:{tenant.email}</Card.Text> */}
+
 		
 			</Card.Body>
 		</Card>

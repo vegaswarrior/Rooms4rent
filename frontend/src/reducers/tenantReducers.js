@@ -90,7 +90,7 @@ import {
       case TENANT_UPDATE_FAIL:
         return { loading: false, error: action.payload }
       case TENANT_UPDATE_RESET:
-        return { TENANT: {} }
+        return { tenant: {} }
       default:
         return state
     }

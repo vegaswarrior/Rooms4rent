@@ -32,14 +32,79 @@ const Header = () => {
 
             <Nav className="me-auto" id="first_nav">
             <LinkContainer to="/">
-				<Navbar.Brand className="jumboH2 text-info ">Home</Navbar.Brand>
+				<Navbar.Brand className="jumboH2 text-danger ">Home</Navbar.Brand>
 			</LinkContainer>
 			<LinkContainer to="/about">
-				<Navbar.Brand className="jumboH2 text-info">About</Navbar.Brand>
+				<Navbar.Brand className="jumboH2 text-danger">About</Navbar.Brand>
 			</LinkContainer>
 			<LinkContainer to="/contact">
-				<Navbar.Brand className="jumboH2 text-info">Contact Us</Navbar.Brand>
-			</LinkContainer>
+				<Navbar.Brand className="jumboH2 text-danger">Contact Us</Navbar.Brand>
+			</LinkContainer>			              
+			              {userInfo && userInfo.isAdmin && (
+								<NavDropdown title='Properties' id='adminmenu'>
+
+			                  <LinkContainer to='/admin/SnowFlower/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Snow Flower</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/Tropicana/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Tropicana</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/SirGeorge/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Sir George</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/SirDavid/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Sir David</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/SantaAnita/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Santa Anita</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/Sandmist/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Sandmist</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/LivingDesert/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Living Desert</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/Lamont/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Lamont</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/Hialeah/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Hialeah</NavDropdown.Item>
+								</LinkContainer>
+								</NavDropdown>
+							)}
+			              {userInfo && userInfo.isAdmin && (
+								<NavDropdown title='Sober Living' id='adminmenu'>
+
+			                  <LinkContainer to='/admin/FlowerHome/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Flower Home</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/Hassett/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Hassett</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/Melissa/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Melissa</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/PalmsHouse/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Pamls House</NavDropdown.Item>
+								</LinkContainer>
+
+								</NavDropdown>
+							)}
+			              {userInfo && userInfo.isAdmin && (
+								<NavDropdown title='Airbnbs' id='adminmenu'>
+
+			                  <LinkContainer to='/admin/SnowFlower/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Snow Flower</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/Tropicana/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Tropicana</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to='/admin/SirGeorge/1'>
+									<NavDropdown.Item className="jumboH5 text-info">Sir George</NavDropdown.Item>
+								</LinkContainer>
+
+								</NavDropdown>
+							)}
           </Nav>
           <Nav className="ml-auto" >
 							{userInfo ? (
@@ -59,18 +124,19 @@ const Header = () => {
 									</Nav.Link>
 								</LinkContainer>
 							)}
-			              {userInfo && userInfo.isAdmin && (
-								<NavDropdown title='Admin' id='adminmenu'>
-								<LinkContainer to='/admin/userlist'>
-									<NavDropdown.Item>Users</NavDropdown.Item>
-								</LinkContainer>
-								<LinkContainer to='/admin/productlist'>
-									<NavDropdown.Item>Properties</NavDropdown.Item>
-								</LinkContainer>
-								<LinkContainer to='/admin/tenantlist'>
-									<NavDropdown.Item>Tenants</NavDropdown.Item>
-								</LinkContainer>
+                       			{userInfo && userInfo.isAdmin && (
+								<NavDropdown title="Admin" id="adminmenu">
+									<LinkContainer to="/admin/userlist">
+										<NavDropdown.Item>Properties</NavDropdown.Item>
+									</LinkContainer>
+									<LinkContainer to="/admin/tenantlist">
+										<NavDropdown.Item>Tenants</NavDropdown.Item>
+									</LinkContainer>
+									<LinkContainer to="/admin/orderlist">
+										<NavDropdown.Item>Rents</NavDropdown.Item>
+									</LinkContainer>
 								</NavDropdown>
+								
 							)}
 						
 						</Nav>

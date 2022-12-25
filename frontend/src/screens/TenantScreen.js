@@ -9,7 +9,7 @@ import {listTenantDetails} from "../actions/tenantActions";
 
 
 
-const TenantScreen = ({history}) => {
+const TenantScreen = ({history, match}) => {
 	const [qty, setQty] = useState(1);
 
 	const dispatch = useDispatch();
@@ -20,12 +20,12 @@ const TenantScreen = ({history}) => {
 	const userLogin = useSelector((state) => state.userLogin);
 	const {userInfo} = userLogin;
 
-	// useEffect(() => {
-	// 	if (!tenant._id || tenant._id !== match.params.id) {
-	// 		dispatch(listTenantDetails(match.params.id));
+	useEffect(() => {
+		if (!tenant._id || tenant._id !== match.params.id) {
+			dispatch(listTenantDetails(match.params.id));
 			
-	// 	}
-	// }, [dispatch, match, tenant]);
+		}
+	}, [dispatch, match, tenant]);
 
 	return (
 		<>
@@ -49,8 +49,7 @@ const TenantScreen = ({history}) => {
 								<ListGroup.Item>Monthly Rent: ${tenant.rent}</ListGroup.Item>
 								<ListGroup.Item>Room Number: ${tenant.roomNum}</ListGroup.Item>
 								<ListGroup.Item>Bed Number: ${tenant.bedNum}</ListGroup.Item>
-								<ListGroup.Item>Email:{tenant.email}</ListGroup.Item>
-								<ListGroup.Item>Phone:{tenant.phone}</ListGroup.Item>
+								{/* <ListGroup.Item>Phone:{tenant.phone}</ListGroup.Item> */}
 
 							</ListGroup>
 						</Col>
