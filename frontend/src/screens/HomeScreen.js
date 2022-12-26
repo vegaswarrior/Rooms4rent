@@ -28,11 +28,11 @@ const HomeScreen = ({ match }) => {
       <Meta />
         <Container fluid className='hero_container'>
           <Row>
-            <h1 className='text-center'>Las Vegas</h1>
-            <h3 className='text-center'>Rooms For Rent</h3>
+             <h1 className='text-white text-center'>Under Construction</h1>
+             <h5 className='text-white text-center'>Coming Soon</h5>
           </Row>
         </Container>
-
+      
     </>
   )
 }
