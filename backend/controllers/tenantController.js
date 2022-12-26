@@ -65,6 +65,7 @@ const createTenant = asyncHandler(async (req, res) => {
 		email_1: "Enter Email",
 		rent: 0,
         phone: 0,
+		category: "Sample category",
         address: "Please Enter AN Address",
 		roomNum: 0,
 		bedNnum: 0,
@@ -76,7 +77,7 @@ const createTenant = asyncHandler(async (req, res) => {
 });
 
 const updateTenant = asyncHandler(async (req, res) => {
-	const {name, rent, notes, phone, roomNum, bedNum, address, email_1} = req.body;
+	const {name, rent, notes, phone, roomNum, category, bedNum, address, email_1} = req.body;
 
 	const tenant = await Tenant.findById(req.params.id);
 
@@ -84,6 +85,7 @@ const updateTenant = asyncHandler(async (req, res) => {
 		tenant.name = name;
 		tenant.email_1 = email_1;
 		tenant.address = address;
+		tenant.category = category;
 		tenant.phone = phone;
 		tenant.roomNum = roomNum;
 		tenant.bedNum = bedNum;

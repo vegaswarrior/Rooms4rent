@@ -20,6 +20,10 @@ const tenantSchema = mongoose.Schema(
 			type: String,
 			required: true
 		},
+		category: {
+			type: String,
+			required: true
+		},
 		rent: {
 			type: Number,
 			required: true,

@@ -18,14 +18,14 @@ import {
 } from '../constants/tenantConstants'
 import { logout } from './userActions'
 
-export const listTenants = (keyword = '', pageNumber = '') => async (
+export const listTenants = (keyword = '', pageNumber = '', category = '') => async (
   dispatch
 ) => {
   try {
     dispatch({ type: TENANT_LIST_REQUEST })
 
     const { data } = await axios.get(
-      `/api/tenants?keyword=${keyword}&pageNumber=${pageNumber}`
+      `/api/tenants?keyword=${keyword}&pageNumber=${pageNumber}&category=${category}`
     )
 
     dispatch({

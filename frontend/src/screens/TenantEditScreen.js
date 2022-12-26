@@ -21,7 +21,7 @@ const TenantEditScreen = ({match, history}) => {
 	const [phone, setPhone] = useState(0);
 	const [notes, setNotes] = useState("");
 	const [email_1, setEmail_1] = useState("");
-	// const [property, setProperty] = useState("");
+	const [category, setCategory] = useState("");
 
 	const dispatch = useDispatch();
 
@@ -51,7 +51,7 @@ const TenantEditScreen = ({match, history}) => {
 				setPhone(tenant.phone);
 				setNotes(tenant.notes);
 				setEmail_1(tenant.email_1);
-				// setProperty(tenant.property);
+				setCategory(tenant.category_1);
 
 			}
 		}
@@ -71,6 +71,7 @@ const TenantEditScreen = ({match, history}) => {
                 phone,
 				notes,
 				email_1,
+				category,
 			})
 		);
 	};
@@ -116,17 +117,17 @@ const TenantEditScreen = ({match, history}) => {
 							<Form.Control type="number" placeholder="Monthly Rent" value={rent} onChange={(e) => setRent(e.target.value)}></Form.Control>	
 						</Form.Group>
 						<Form.Group controlId="email_1">
-							<Form.Label>Montly Rent</Form.Label>
+							<Form.Label>Email</Form.Label>
 							<Form.Control type="email" placeholder="Email" value={email_1} onChange={(e) => setEmail_1(e.target.value)}></Form.Control>	
 						</Form.Group>
 						<Form.Group controlId="notes">
 							<Form.Label>Notes</Form.Label>
 							<Form.Control type="text" placeholder="Notes" value={notes} onChange={(e) => setNotes(e.target.value)}></Form.Control>	
 						</Form.Group>
-						{/* <Form.Group controlId="property">
-							<Form.Label>Property</Form.Label>
-							<Form.Control type="text" placeholder="Property" value={property} onChange={(e) => setProperty(e.target.value)}></Form.Control>	
-						</Form.Group> */}
+						<Form.Group controlId="category_1">
+							<Form.Label>Category</Form.Label>
+							<Form.Control type="text" placeholder="Category" value={category} onChange={(e) => setCategory(e.target.value)}></Form.Control>	
+						</Form.Group>
 				
 
                          

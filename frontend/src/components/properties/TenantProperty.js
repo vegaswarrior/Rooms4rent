@@ -1,30 +1,31 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
-import Product from "../Product";
+import Tenant from "../Tenant";
 import Message from "../Message";
 import Loader from "../Loader";
 import Paginate from "../Paginate";
-import { listProducts } from "../../actions/productActions";
+import { listTenants } from "../../actions/tenantActions";
 import Meta from "../Meta";
+
 
 const SnowFlower = ({match}) => {
   const keyword = match.params.keyword;
-  const category = "SnowFlower";
+  const category = "Snow Flower";
 
   const pageNumber = match.params.pageNumber || 1;
 
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const tenantList = useSelector((state) => state.tenantList);
+  const { loading, error, tenants, page, pages } = tenantList;
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber, category));
+    dispatch(listTenants(keyword, pageNumber, category));
   }, [dispatch, keyword, pageNumber]);
 
   return (
-    <Container fluid className="properties_container">
+    <Container fluid className="featured_products_container">
       <Meta />
       <h1 className="latest_products text-center">Snow Flower</h1>
       {loading ? (
@@ -33,9 +34,9 @@ const SnowFlower = ({match}) => {
         <Message variant="danger">{error}</Message>
       ) : (<Container>
         <Row>
-          {products.map((product) => (
-            <Col key={product._id} sm={12} md={12} lg={12} xl={12}>
-              <Product product={product} />
+          {tenants.map((tenant) => (
+            <Col key={tenant._id} sm={12} md={12} lg={12} xl={12}>
+              <Tenant tenant={tenant} />
             </Col>
           ))}
         </Row>

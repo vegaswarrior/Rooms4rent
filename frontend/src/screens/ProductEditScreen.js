@@ -144,6 +144,10 @@ const ProductEditScreen = ({match, history}) => {
 							<Form.Label>Number Of Beds</Form.Label>
 							<Form.Control type="number" placeholder="Enter Number Of Rooms" value={numBeds} onChange={(e) => setNumBeds(e.target.value)}></Form.Control>	
 						</Form.Group>
+						<Form.Group controlId="category">
+							<Form.Label>Category</Form.Label>
+							<Form.Control type="text" placeholder="Category" value={category} onChange={(e) => setCategory(e.target.value)}></Form.Control>	
+						</Form.Group>
 
 
 						<Button type="submit" variant="primary">
